@@ -1,0 +1,17 @@
+.card-display {
+  width: 500px;
+  height: 300px;
+  margin: 50px auto 30px auto;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.btn-add {
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 5px 15px 5px 15px;
+  border: 2px solid black;
+  border-radius: 15px;
+}

@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Menu from './components/Menu/Menu';
+import Deck from './components/Deck/Deck';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showDeck: false,
+      showQuiz: false
+    }
+  }
+
+  toggleDeck = () => {
+    this.setState({
+      showCardCollection: true,
+      showQuiz: false});
+  }
+
+  toggleQuiz = () => {
+    this.setState({
+      showCardCollection: false,
+      showQuiz: true});
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Menu 
+          showCardCollection={this.toggleDeck}
+          showQuiz={this.toggleQuiz}/>
+        <Deck  
+          showDeck={this.state.showDeck}
+          showQuiz={this.state.showQuiz}
+          />
       </div>
     );
   }
