@@ -43,7 +43,10 @@ class Card extends Component {
       {display}
       <button
         className='btn btn-flip'
-        onClick={this.handleFlip}>Flip Card</button> 
+        onClick={this.handleFlip}>Flip Card</button>
+      <button
+        className='btn btn-remove'
+        onClick={this.removeCard}>Remove Card</button>
     </div>
     );
   }

@@ -18,7 +18,55 @@ class Deck extends Component {
     }
   }
 
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
 
+    // add event listener to save state to localStorage
+    // when user leaves/refreshes the page
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage.bind(this)
+    );
+
+    // saves if component has a chance to unmount
+    this.saveStateToLocalStorage();
+  }
+
+
+  hydrateStateWithLocalStorage() {
+    // for all items in state
+    for (let cards in this.state) {
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty(cards)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(cards);
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ cards: value });
+        } catch (e) {
+          // handle empty string
+          return;
+        }
+      }
+    }
+  }
+
+  saveStateToLocalStorage() {
+    // for every item in React state
+    for (let cards in this.state) {
+      // save to localStorage
+      localStorage.setItem(cards, JSON.stringify(this.state.cards));
+    }
+  }
 
   handleChangeQuestion = (event) => {
     this.setState({ inputQuestion: event.target.value });
@@ -35,7 +83,7 @@ class Deck extends Component {
     const ids = this.state.cards.map( card => card.id);
     const max_id = max_number(ids);
     cards.push({ id: max_id + 1, question: question, answer: answer});
-    this.setState({ cards: cards, inputQuestion: '', inputAnswer: ''});
+    this.setState({ cards: cards, inputQuestion: '', inputAnswer: ''}, this.saveToLocal);
     e.preventDefault();
     e.target.reset();
     
@@ -44,13 +92,14 @@ class Deck extends Component {
 
   removeCard = (id) => {
     const cards = this.state.cards.filter(card => card.id !== id);
-    this.setState({ cards });
+    this.setState({ cards }, this.saveToLocal);
   }
 
   
 
 
   render() {
+
     let deck = null;
     if (this.props.showDeck){
       deck = (
