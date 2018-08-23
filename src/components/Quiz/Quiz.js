@@ -33,7 +33,7 @@ class Quiz extends Component {
       next = <button className='btn btn-increment btn-next' onClick={this.nextCard}>Next &rarr;</button>
     }
 
-    let card = null;
+    let card = <h3>Add some cards!</h3>;
     if (this.props.cards.length >0) {
       let data = this.props.cards[this.state.page-1];
         card = <Card
