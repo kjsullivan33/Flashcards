@@ -23,6 +23,8 @@ class Card extends Component {
   // }
 
   render() {
+
+    console.log(this.props);
     let display = null;
     if (this.state.showFront){
       display = <CardFront
@@ -37,6 +39,7 @@ class Card extends Component {
         
       />
     }
+
     return( 
     <div className="card-display">
       <p className='card-number'>{this.props.cardNumber}</p>
@@ -46,7 +49,7 @@ class Card extends Component {
         onClick={this.handleFlip}>Flip Card</button>
       <button
         className='btn btn-remove'
-        onClick={() => this.props.removeCard(this.props.card.id)}>Remove Card</button>
+        onClick={() => this.props.removeCard(this.props.cardNumber)}>Remove Card</button>
     </div>
     );
   }

@@ -23,7 +23,7 @@ class Quiz extends Component {
     }
   }
   render() {
-
+    console.log(this.props);
     let prev = null;
     if (this.state.page > 1) {
       prev = <button className='btn btn-increment btn-prev' onClick={this.previousCard}>&larr; Previous</button>
@@ -39,7 +39,9 @@ class Quiz extends Component {
         card = <Card
         question={data.question}
         answer={data.answer}
-        cardNumber={this.props.page}
+        cardNumber={data.id}
+        removeCard={this.props.removeCard}
+        
          />
     }
 

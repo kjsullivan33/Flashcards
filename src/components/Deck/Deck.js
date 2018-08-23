@@ -121,6 +121,7 @@ class Deck extends Component {
                 question={card.question}
                 answer={card.answer}
                 removeCard={this.removeCard}
+                
               />)
             })}
           </div>
@@ -129,7 +130,8 @@ class Deck extends Component {
     let quiz = null;
     if (this.props.showQuiz) {
       quiz = <Quiz
-        cards={this.state.cards} />
+        cards={this.state.cards}
+        removeCard={this.removeCard}/>
     }
     return (
       <div>
