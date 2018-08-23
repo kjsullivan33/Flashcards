@@ -83,7 +83,7 @@ class Deck extends Component {
     const ids = this.state.cards.map( card => card.id);
     const max_id = max_number(ids);
     cards.push({ id: max_id + 1, question: question, answer: answer});
-    this.setState({ cards: cards, inputQuestion: '', inputAnswer: ''}, this.saveToLocal);
+    this.setState({ cards: cards, inputQuestion: '', inputAnswer: ''});
     e.preventDefault();
     e.target.reset();
     
@@ -92,7 +92,7 @@ class Deck extends Component {
 
   removeCard = (id) => {
     const cards = this.state.cards.filter(card => card.id !== id);
-    this.setState({ cards }, this.saveToLocal);
+    this.setState({ cards });
   }
 
   

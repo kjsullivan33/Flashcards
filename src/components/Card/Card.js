@@ -46,7 +46,7 @@ class Card extends Component {
         onClick={this.handleFlip}>Flip Card</button>
       <button
         className='btn btn-remove'
-        onClick={this.removeCard}>Remove Card</button>
+        onClick={() => this.props.removeCard(this.props.card.id)}>Remove Card</button>
     </div>
     );
   }
