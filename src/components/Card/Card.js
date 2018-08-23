@@ -39,11 +39,11 @@ class Card extends Component {
     }
     return( 
     <div className="card-display">
+      <p className='card-number'>{this.props.cardNumber}</p>
       {display}
-        <button
-          className='btn-flip'
-          onClick={this.handleFlip}>Flip Card</button>
-        <footer>{this.props.cardNumber}</footer>
+      <button
+        className='btn btn-flip'
+        onClick={this.handleFlip}>Flip Card</button> 
     </div>
     );
   }

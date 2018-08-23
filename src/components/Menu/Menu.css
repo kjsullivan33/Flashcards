@@ -1,0 +1,27 @@
+.btn {
+  margin-top: 20px;
+  background-color: #3d7755;
+  border-radius: 40px;
+  font-size: 36px;
+  color: white;
+  padding: 5px 40px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.btn:hover{
+  background-color: #3e825a;
+  transform: translateY(-.3rem);
+  box-shadow: 0 10px 20px rgba(5,5,5,.2); 
+}
+
+button:focus { outline: none; }
+
+.btn:active{
+  transform: translateY(-.1rem);
+  box-shadow: 0 5px 10px rgba(5,5,5,.2);
+}
+
+.btn-quiz {
+  margin-right: 20px;
+}

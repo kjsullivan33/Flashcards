@@ -1,24 +1,35 @@
 import React from 'react';
+import './AddCard.css';
 
 const addCard = (props) => {
   return (
     <div id='add-card-form'>
       <form onSubmit={props.addCard}>
-        <label>Question: </label>
-        <input
-          type="text"
-          className="input-question"
-          onChange={props.changedQuestion}
-          value={props.question}
-        />
-        <label>Answer: </label>
-        <input
-          type="text"
-          className="input-answer"
-          onChange={props.changedAnswer}
-          value={props.answer}
-        />
-        <input type="submit" value="Add Card"/>
+        <div className='card'>
+          <div className='question-label'>
+            <label>Question</label>
+          </div>
+          <div className='input'>
+            <input
+              type="text"
+              onChange={props.changedQuestion}
+              value={props.question}
+            />
+          </div>
+        </div>
+        <div className='card'>
+          <div className='answer-label'>
+            <label>Answer</label>
+          </div>
+          <div className='input'>
+            <input
+              type="text"
+              onChange={props.changedAnswer}
+              value={props.answer}
+            />
+          </div>
+        </div>
+        <button className='btn btn-submit'>Add Card </button>
       </form>
     </div>
   )

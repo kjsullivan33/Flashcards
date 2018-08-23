@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Card from '../Card/Card';
 import AddCard from '../AddCard/AddCard';
 import Quiz from '../Quiz/Quiz';
+import Aux from '../../hoc/Aux';
 import { max_number } from '../../helper/index';
+import './Deck.css';
 
 
 class Deck extends Component {
@@ -49,26 +51,41 @@ class Deck extends Component {
 
 
   render() {
+    let deck = null;
+    if (this.props.showDeck){
+      deck = (
+        <Aux>
+        <div className='add-card'>
+          <AddCard
+            changedQuestion={this.handleChangeQuestion}
+            changedAnswer={this.handleChangeAnswer}
+            question={this.props.inputQuestion}
+            answer={this.props.inputAnswer}
+            addCard={this.addCard} />
+        </div>
+          <div className='deck'>
+            {this.state.cards.map(card => {
+              return (<Card
+                key={card.id}
+                card={card}
+                cardNumber={card.id}
+                question={card.question}
+                answer={card.answer}
+                removeCard={this.removeCard}
+              />)
+            })}
+          </div>
+          </Aux>
+      )};
+    let quiz = null;
+    if (this.props.showQuiz) {
+      quiz = <Quiz
+        cards={this.state.cards} />
+    }
     return (
       <div>
-        {this.state.cards.map(card => {
-          return (<Card
-            key={card.id}
-            card={card}
-            cardNumber={card.id}
-            question={card.question}
-            answer={card.answer}
-            removeCard={this.removeCard}
-            />)
-        })}
-        <AddCard 
-          changedQuestion={this.handleChangeQuestion}
-          changedAnswer={this.handleChangeAnswer}
-          question={this.props.inputQuestion}
-          answer={this.props.inputAnswer}
-          addCard={this.addCard}/>
-        <Quiz 
-          cards={this.state.cards}/>
+        {deck}
+        {quiz}
       </div>
     )
   }

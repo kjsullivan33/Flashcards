@@ -15,13 +15,13 @@ class App extends Component {
 
   toggleDeck = () => {
     this.setState({
-      showCardCollection: true,
+      showDeck: true,
       showQuiz: false});
   }
 
   toggleQuiz = () => {
     this.setState({
-      showCardCollection: false,
+      showDeck: false,
       showQuiz: true});
   }
 
@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div className="App">
         <Menu 
-          showCardCollection={this.toggleDeck}
+          showDeck={this.toggleDeck}
           showQuiz={this.toggleQuiz}/>
         <Deck  
           showDeck={this.state.showDeck}

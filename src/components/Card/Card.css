@@ -1,17 +1,27 @@
 .card-display {
   width: 500px;
   height: 300px;
-  margin: 50px auto 30px auto;
   border: 2px solid black;
   border-radius: 15px;
+  font-size: 26px;
+  margin-bottom: 20px;
+  background-color: white;
 }
 
-.btn-add {
-  margin-top: 20px;
+.btn-flip {
+  font-size: 20px;
+  background-color: #3e593a;
+  border-radius: 5px;
+  border: none;
   cursor: pointer;
-  font-size: 30px;
-  font-weight: bold;
-  padding: 5px 15px 5px 15px;
-  border: 2px solid black;
-  border-radius: 15px;
 }
+
+.card-number {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
