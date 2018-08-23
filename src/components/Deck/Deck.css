@@ -1,6 +1,6 @@
 .deck {
   margin: 10px auto;
-  width: 505px;
+  width: 80%;
   height: 640px;
   overflow-y: scroll;
 }

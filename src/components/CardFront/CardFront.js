@@ -1,13 +1,14 @@
 import React from 'react';
+import Aux from '../../hoc/Aux';
 import './CardFront.css';
 
 
 const cardFront = (props) => {
     return (
-      <div className="card-front">
+      <Aux>
         <h2>Question</h2>
-        <div>{props.question}</div> 
-      </div>
+        <p className="card-details">{props.question}</p> 
+      </Aux>
     );
 }
 
