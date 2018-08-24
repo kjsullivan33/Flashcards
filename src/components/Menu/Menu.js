@@ -4,13 +4,13 @@ import './Menu.css';
 class Menu extends Component {
   render(){
     return (
-    <div>
+    <div className='menu'>
       <button 
-        className='btn btn-quiz'
+        className='btn menu__btn'
         onClick={this.props.showQuiz}
         >Start the Quiz</button>
       <button 
-        className='btn btn-deck'
+        className='btn menu__btn'
         onClick={this.props.showDeck}
         >Build Your Deck</button>
     </div>);

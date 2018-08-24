@@ -3,32 +3,22 @@ import './AddCard.css';
 
 const addCard = (props) => {
   return (
-    <div id='add-card-form'>
-      <form onSubmit={props.addCard}>
-        <div className='card'>
-          <div className='question-label'>
-            <label>Question</label>
-          </div>
-          <div className='input'>
-            <input
+    <div id='add-card'>
+      <form className='add-card__form' onSubmit={props.addCard}>
+            <input 
+              className='add-card__input'
               type="text"
+              placeholder="Add a question..."
               onChange={props.changedQuestion}
               value={props.question}
             />
-          </div>
-        </div>
-        <div className='card'>
-          <div className='answer-label'>
-            <label>Answer</label>
-          </div>
-          <div className='input'>
             <input
+              className='add-card__input'
               type="text"
+              placeholder="Add an answer..."
               onChange={props.changedAnswer}
               value={props.answer}
             />
-          </div>
-        </div>
         <button className='btn btn-submit'>Add Card </button>
       </form>
     </div>

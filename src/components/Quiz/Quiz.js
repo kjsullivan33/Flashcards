@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card';
+import QuizCard from '../QuizCard/QuizCard';
 import './Quiz.css';
 
 class Quiz extends Component {
@@ -36,11 +36,10 @@ class Quiz extends Component {
     let card = <h3>Add some cards!</h3>;
     if (this.props.cards.length >0) {
       let data = this.props.cards[this.state.page-1];
-        card = <Card
+        card = <QuizCard
         question={data.question}
         answer={data.answer}
         cardNumber={data.id}
-        removeCard={this.props.removeCard}
         
          />
     }
@@ -49,7 +48,6 @@ class Quiz extends Component {
 
     return (
       <div className="quiz-display">
-        <h1>QUIZ</h1>
         {card}
         {prev}
         {next}

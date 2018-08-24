@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card';
+import DeckCard from '../DeckCard/DeckCard';
 import AddCard from '../AddCard/AddCard';
 import Quiz from '../Quiz/Quiz';
 import Aux from '../../hoc/Aux';
@@ -104,17 +104,15 @@ class Deck extends Component {
     if (this.props.showDeck){
       deck = (
         <Aux>
-        <div className='add-card'>
           <AddCard
             changedQuestion={this.handleChangeQuestion}
             changedAnswer={this.handleChangeAnswer}
             question={this.props.inputQuestion}
             answer={this.props.inputAnswer}
             addCard={this.addCard} />
-        </div>
           <div className='deck'>
             {this.state.cards.map(card => {
-              return (<Card
+              return (<DeckCard
                 key={card.id}
                 card={card}
                 cardNumber={card.id}

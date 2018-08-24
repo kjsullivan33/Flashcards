@@ -1,0 +1,26 @@
+.deck__card {
+  width: 35%;
+  margin: 10px auto;
+  border-radius: 2px;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,.3);
+  background-color: #ccc;
+  font-size: 20px;
+  text-align: left;
+  padding: 1px 3px;
+}
+
+.deck__card-content {
+  list-style: none;
+}
+
+.btn-remove {
+  width: 90%;
+  margin: 5px 5%;
+  padding: 5px;
+  color: white;
+  font-size: 20px;
+  background-color: #481f1f;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
