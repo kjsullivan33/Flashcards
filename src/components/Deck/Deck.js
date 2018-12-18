@@ -13,6 +13,7 @@ class Deck extends Component {
 
     this.state = {
       cards: [],
+      topic: '',
       inputQuestion: '',
       inputAnswer: ''
     }
