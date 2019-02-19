@@ -4,8 +4,10 @@ require('dotenv').config();
 
 
 export const getDecks = () =>{
-  return fetch("http://localhost:4000/cards")
-    .then(response => response.json())
+  return fetch("https://flashcard-api-kjs.herokuapp.com/")
+    .then(response => {
+      console.log(response);
+      return response.json()})
     .then(results => results)
     .catch(err => {
       console.log(err);
@@ -15,7 +17,7 @@ export const getDecks = () =>{
 export const addCard = (question, answer) =>{
   console.log("posted question: " + question);
   console.log("posted answer: " + answer);
-  axios.post("http://localhost:4000/cards/add-card", {
+  axios.post(`https://flashcard-api-kjs.herokuapp.com/add-card`, {
       question: question,
       answer: answer
     }).then(results => results)
@@ -23,7 +25,7 @@ export const addCard = (question, answer) =>{
 }
 
 export const deleteCard = (id) => {
-  axios.delete(`http://localhost:4000/cards/${id}/delete`)
+  axios.delete(`https://flashcard-api-kjs.herokuapp.com/${id}/delete`)
     .then(results => results)
     .catch(err => console.log(err));
 }
