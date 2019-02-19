@@ -8,7 +8,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      showDeck: false,
+      showDeck: true,
       showQuiz: false
     }
   }

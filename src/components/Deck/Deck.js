@@ -84,7 +84,7 @@ class Deck extends Component {
               return (<DeckCard
                 key={card._id}
                 card={card}
-                cardNumber={index+1}
+                cardNumber={index + 1}
                 question={card.question}
                 answer={card.answer}
                 removeCard={this.removeCard}
