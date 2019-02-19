@@ -7,7 +7,7 @@ class DeckCard extends Component {
   render () {
     
     let deckCard = null;
-      if (this.props.cardNumber) {
+      if (this.props.card) {
         deckCard =(
           <div className="deck__card">
             <ul>
@@ -16,7 +16,7 @@ class DeckCard extends Component {
             </ul>
             <button
               className='btn btn-remove'
-              onClick={() => this.props.removeCard(this.props.cardNumber)}>
+              onClick={() => this.props.removeCard(this.props.card._id)}>
               Remove Card
             </button>
           </div>

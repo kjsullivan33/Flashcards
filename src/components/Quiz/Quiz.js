@@ -39,7 +39,7 @@ class Quiz extends Component {
         card = <QuizCard
         question={data.question}
         answer={data.answer}
-        cardNumber={data.id}
+        cardNumber={this.state.page}
         
          />
     }
