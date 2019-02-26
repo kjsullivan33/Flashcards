@@ -3,16 +3,18 @@
   text-align: center;
   width: 500px;
   height: 300px;
-  border: 2px solid black;
+  border: 2px solid rgb(184, 188, 193);
   border-radius: 15px;
   font-size: 26px;
   margin: 0 auto 20px auto;
-  background-color: white;
+  background-color: rgb(249, 251, 254);
+  box-shadow: 3px 3px 10px 3px rgba(97, 108, 120, 0.5);
 }
 
 .btn-flip {
-  font-size: 20px;
-  background-color: #3e593a;
+  font-size: 26px;
+  background-color: #18386d;
+  color: white;
   border-radius: 5px;
   border: none;
   cursor: pointer;

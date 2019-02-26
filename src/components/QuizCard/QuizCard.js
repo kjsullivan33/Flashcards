@@ -5,25 +5,19 @@ import CardBack from '../CardBack/CardBack';
 import './QuizCard.css';
 
 class QuizCard extends Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props){
     super(props)
+   }
 
-    this.state= {
-      showFront: true
-    }
-  }
-
-  handleFlip = () => {
-    let doesShow = this.state.showFront;
-    this.setState({showFront: !doesShow});
-  }
+  
 
 
   render() {
 
     console.log(this.props);
     let display = null;
-    if (this.state.showFront){
+    if (this.props.showFront){
       display = <CardFront
         question={this.props.question}
         
@@ -41,7 +35,7 @@ class QuizCard extends Component {
       {display}
       <button
         className='btn btn-flip'
-        onClick={this.handleFlip}>Flip Card</button>
+        onClick={this.props.flip}>Flip Card</button>
     </div>
     );
   }

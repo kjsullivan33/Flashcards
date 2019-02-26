@@ -6,6 +6,7 @@ import './CardBack.css';
 const cardBack = (props) => {
   return (
     <Aux>
+      <h3>Answer</h3>
       <div>{props.answer}</div>
     </Aux>
   );

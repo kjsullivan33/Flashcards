@@ -7,21 +7,28 @@ class Quiz extends Component {
     super(props)
     
     this.state = {
-      page: 1
+      page: 1,
+      showFront: true
     }
   }
 
   nextCard = () => {
     if(this.state.page < this.props.cards.length){
-    this.setState({page : this.state.page + 1 });
+    this.setState({page : this.state.page + 1, showFront: true });
     }
   }
 
   previousCard = () => {
     if(this.state.page > 1){
-      this.setState({page : this.state.page - 1});
+      this.setState({page : this.state.page - 1, showFront: true});
     }
   }
+
+  handleFlip = () => {
+    let doesShow = this.state.showFront;
+    this.setState({ showFront: !doesShow });
+  }
+
   render() {
     console.log(this.props);
     let prev = null;
@@ -40,6 +47,8 @@ class Quiz extends Component {
         question={data.question}
         answer={data.answer}
         cardNumber={this.state.page}
+        showFront={this.state.showFront}
+        flip={this.handleFlip}
         
          />
     }
